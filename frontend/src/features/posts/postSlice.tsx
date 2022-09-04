@@ -47,21 +47,24 @@ export const postSlice = createSlice({
   extraReducers: (builder) => {
     builder
 
-      /*
-       * While you wait
-       */
-      .addCase(fetchPostsAsync.pendding)
+      .addCase(fetchPostsAsync.pending, (state) => {
+        return produce(state, (draftState) => {
+          draftState.status = Statuses.Loading;
+        });
+      })
 
-      /**
-       * You get what you need
-       */
+      .addCase(fetchPostsAsync.fulfilled, (state) => {
+        return produce(state, (draftState) => {
+          draftState.status = Statuses.UpToDate;
+        });
+      })
 
-      .addCase(fetchPostsAsync.fulfilled)
-
-      /**
-       * The error
-       */
-
-      .addCase(fetchPostsAsync.error);
+      .addCase(fetchPostsAsync.error, (state) => {
+        return produce(state, (draftState) => {
+          draftState.status = Statuses.Error;
+        });
+      });
   },
 });
+
+export const {} = postSlice.actions;
