@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ButtonGroup from "./ButtonGroup";
 
 function Post(props: any) {
   const [title, setTitle] = useState(props.post.title);
@@ -12,7 +13,9 @@ function Post(props: any) {
       <div className="row">
         <div className="col-8">
           {titleElement}
-          <div className="col-4">{/** Button Group */}</div>
+          <div className="col-4">
+            <ButtonGroup post_id={props.post.id} dispatch={props.dispatch} />
+          </div>
         </div>
       </div>
       <div className="row">
