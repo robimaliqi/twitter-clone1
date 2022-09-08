@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../app/hooks";
+import Post from "./Post";
+import PostForm from "./PostForm";
 import {
   fetchPostsAsync,
   selectPosts,
@@ -8,8 +10,6 @@ import {
   Statuses,
   updatePostAsync,
 } from "./postSlice";
-import Post from "./Post";
-import PostForm from "./PostForm";
 
 function Posts() {
   const posts = useAppSelector(selectPosts);
@@ -29,6 +29,7 @@ function Posts() {
       setPostToEdit(post_id as number);
     }
   }
+
   function submitEdit(formData: any) {
     dispatch(updatePostAsync(formData));
     toggleEditForm();
