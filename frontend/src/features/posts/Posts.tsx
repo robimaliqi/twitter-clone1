@@ -47,7 +47,7 @@ function Posts() {
           <PostForm />
           {posts &&
             posts.length > 0 &&
-            posts.map((post) => {
+            [...posts].reverse().map((post) => {
               return (
                 <div key={post.id} style={{ margin: "5em" }}>
                   <Post
