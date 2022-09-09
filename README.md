@@ -27,20 +27,21 @@ npm run start
 
 #### Ruby App:
 
-All posts:
+All posts:  
 localhost:3000
+
 ![Rails](./public/rails-printscreen.png)
 
-All posts json format (using JSON Viewer Pro google chrome extention):
-localhost:3000/posts.json
+All posts json format (using JSON Viewer Pro google chrome extention):  
+localhost:3000/posts.json  
 ![RailsJson](./public/rails-json.png)
 
-New post:
-localhost:3000/posts/new
+New post:  
+localhost:3000/posts/new  
 ![RailsPost](./public/rails-newpost.png)
 
-Edit/Delete post:
-localhost:3000/posts/{id}
+Edit/Delete post:  
+localhost:3000/posts/{id}  
 ![RailsEditPost](./public/edit-post.png)
 
 #### React App:
